@@ -19,6 +19,7 @@ Should be able to see the response for the get request
 {"Default": "Hello World"}
 
 Sample POST to session: 
+```json
 {
   "projectId": "ABC123",
   "deploymentEnvironment": "preview",
@@ -31,6 +32,7 @@ Sample POST to session:
 }
 
 Sample POST for execute: 
+```json
 {
   "projectId": "ABC123",
   "deploymentEnvironment": "preview",
@@ -72,58 +74,59 @@ Sample POST for execute:
 }
 
 Soul Machines Skill Definition:
+```json
 {
-  "name": "Azure OpenAI Raw Skill",
-  "summary": "Azure OpenAI Raw Skill,
-  "description": "This skill will be able to interact with Azure Cognitive Services and OpenAI API.",
-  "isPublic": false,
-  "status": "ACTIVE",
-  "serviceProvider": "SKILL_API",
-  "categoryIds": [],
-  "endpointInitialize": "https://[ENDPOINT]/init",
-  "endpointSession": "https://[ENDPOINT]/session",
-  "endpointExecute": "https://[ENDPOINT]/execute",
-  "endpointEndSession": null,
-  "endpointEndProject": null,
-  "endpointMatchIntent": null,
-  "languages": null,
-  "config": {
-    "matchType": "FALLBACK",
-    "skillType": "DEFAULT",
-    "configMeta": [
-      {
-        "name": "Azure OpenAPI key",
-        "type": "TEXT",
-        "label": "Key generated for the Azure OpenAPI",
-        "required": "true",
-        "placeholder": "ba5aa5c22aa94b29aaa8919a584e01da",
-        "defaultValue": ""
-      },
-      {
-        "name": "Azure OpenAPI Endpoint",
-        "type": "TEXT",
-        "label": "Endpoint for the Azure OpenAPI",
-        "required": "true",
-        "placeholder": "https://[endpoint].openai.azure.com/",
-        "defaultValue": "[endpoint].azurewebsites.net"
-      },
-      {
-        "name": "Azure OpenAPI Deployment Name",
-        "type": "TEXT",
-        "label": "Deployment name for the Azure OpenAPI",
-        "required": "true",
-        "placeholder": "gpt4",
-        "defaultValue": ""
-      },
-      {
-        "name": "Azure OpenAI Prompt",
-        "type": "TEXT",
-        "label": "Full prompt for OpenAI, including KB",
-        "required": "true",
-        "placeholder": "You are XXX...",
-        "defaultValue": ""
-      }
-    ],
-    "exitPhrase": ".*"
-  }
+    "name": "Azure OpenAI Raw Skill",
+    "summary": "Azure OpenAI Raw Skill",
+    "description": "This skill will be able to interact with Azure Cognitive Services and OpenAI API.",
+    "isPublic": false,
+    "status": "ACTIVE",
+    "serviceProvider": "SKILL_API",
+    "categoryIds": [],
+    "endpointInitialize": "https://[ENDPOINT]/init",
+    "endpointSession": "https://[ENDPOINT]/session",
+    "endpointExecute": "https://[ENDPOINT]/execute",
+    "endpointEndSession": null,
+    "endpointEndProject": null,
+    "endpointMatchIntent": null,
+    "languages": null,
+    "config": {
+        "matchType": "FALLBACK",
+        "skillType": "DEFAULT",
+        "configMeta": [
+            {
+                "name": "Azure OpenAPI key",
+                "type": "TEXT",
+                "label": "Key generated for the Azure OpenAPI",
+                "required": "true",
+                "placeholder": "ba5aa5c22aa94b29aaa8919a584e01da",
+                "defaultValue": ""
+            },
+            {
+                "name": "Azure OpenAPI Endpoint",
+                "type": "TEXT",
+                "label": "Endpoint for the Azure OpenAPI",
+                "required": "true",
+                "placeholder": "https://[endpoint].openai.azure.com/",
+                "defaultValue": "[endpoint].azurewebsites.net"
+            },
+            {
+                "name": "Azure OpenAPI Deployment Name",
+                "type": "TEXT",
+                "label": "Deployment name for the Azure OpenAPI",
+                "required": "true",
+                "placeholder": "gpt4",
+                "defaultValue": ""
+            },
+            {
+                "name": "Azure OpenAI Prompt",
+                "type": "TEXT",
+                "label": "Full prompt for OpenAI, including KB",
+                "required": "true",
+                "placeholder": "You are XXX...",
+                "defaultValue": ""
+            }
+        ],
+        "exitPhrase": ".*"
+    }
 }
